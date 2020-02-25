@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/web,node
-# Edit at https://www.gitignore.io/?templates=web,node
+# Created by https://www.gitignore.io/api/node
+# Edit at https://www.gitignore.io/?templates=node
 
 ### Node ###
 # Logs
@@ -108,19 +108,4 @@ dist/
 tmp/
 temp/
 
-### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.wasm
-*.wat
-*.xhtml
-
-# End of https://www.gitignore.io/api/web,node
+# End of https://www.gitignore.io/api/node

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NASA APOD</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .photo {
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="photo"></div>
+    <script>
+      const getPhoto = async () => {
+        const request = await fetch(
+          "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+        );
+        const json = await request.json();
+        document.querySelector(
+          ".photo"
+        ).style.backgroundImage = `url(${json.hdurl})`;
+      };
+
+      getPhoto();
+
+      setInterval(() => {
+        const utcHour = new Date().getUTCHours();
+        // Get the current hour in UTC
+
+        if (utcHour === 5) {
+          getPhoto();
+        }
+        // 5am UTC is equal to midnight EST, when the photo is updated
+      }, 1000 * 60 * 60);
+      // Refresh every hour
+    </script>
+  </body>
+</html>
