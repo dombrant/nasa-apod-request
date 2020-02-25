@@ -1,0 +1,21 @@
+{
+  "name": "nasa-apod-request",
+  "version": "1.0.0",
+  "description": "Makes a request to NASA's Astronomy Picture of the Day (APOD) and makes it the background image",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "js",
+    "nasa",
+    "apod",
+    "plash"
+  ],
+  "repository": "https://github.com/dombrant/nasa-apod-request.git",
+  "author": "Dominic Brant",
+  "license": "MIT"
+}
