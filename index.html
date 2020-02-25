@@ -28,9 +28,13 @@
           "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
         );
         const json = await request.json();
-        document.querySelector(
-          ".photo"
-        ).style.backgroundImage = `url(${json.hdurl})`;
+
+        if (json.media_type === "image") {
+          document.querySelector(
+            ".photo"
+          ).style.backgroundImage = `url(${json.hdurl})`;
+        }
+        // Only update the background if today's picture is a photo
       };
 
       getPhoto();
