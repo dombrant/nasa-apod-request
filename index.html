@@ -29,6 +29,11 @@
         const request = await fetch(url);
         const json = await request.json();
 
+        if (request.status === 429) {
+          throw new Error("Too many requests");
+        }
+        // Throw an error if the request limit on the demo API key is met
+
         if (json.media_type === "image") {
           document.querySelector(
             ".photo"
