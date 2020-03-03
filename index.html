@@ -23,18 +23,41 @@
   <body>
     <div class="photo"></div>
     <script>
-      const getPhoto = async () => {
-        const request = await fetch(
-          "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
-        );
+      const getPhoto = async (
+        url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+      ) => {
+        const request = await fetch(url);
         const json = await request.json();
 
         if (json.media_type === "image") {
           document.querySelector(
             ".photo"
           ).style.backgroundImage = `url(${json.hdurl})`;
+        } else {
+          const date = new Date();
+          date.setDate(date.getDate() - 1);
+          // Yesterday's date to be formatted below
+
+          let day = date.getDate();
+          let month = date.getMonth() + 1;
+          const year = date.getFullYear();
+
+          if (day < 10) {
+            day = "0" + day;
+          }
+          if (month < 10) {
+            month = "0" + month;
+          }
+          // Add a 0 in front in case the month or date is less than 10
+
+          const yesterday = `${year}-${month}-${day}`;
+          // NASA's API requires that the date be formatted as yyyy-mm-dd
+
+          getPhoto(
+            `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${yesterday}`
+          );
         }
-        // Only update the background if today's picture is a photo
+        // If today's picture is not an image, get yesterday's date and request that picture
       };
 
       getPhoto();
