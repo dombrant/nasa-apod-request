@@ -8,7 +8,7 @@ A simple website that makes a request to NASA's [Astronomy Picture of the Day](h
 
 ## Usage
 
-- Select “Open URL" option in the Plash menu.
+- Select “Open URL" in the Plash menu.
 - Link to `https://dombrant.github.io/nasa-apod-request/index.html`.
 - Enjoy!
 
