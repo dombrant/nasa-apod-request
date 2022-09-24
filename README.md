@@ -18,7 +18,7 @@ If you want to make any changes, feel free to clone this repo and use the "Open 
 
 **Dominic Brant**.
 
-[Follow me on Twitter](https://twitter.com/dombrant). If you have any thoughts/suggestions/problems, feel free to open an issue or Tweet me.
+If you have any thoughts/suggestions/problems, feel free to open an [issue](https://github.com/dombrant/nasa-apod-request/issues).
 
 ## License
 
